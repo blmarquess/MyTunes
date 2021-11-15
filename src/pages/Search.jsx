@@ -7,7 +7,7 @@ export default class Search extends React.Component {
     super();
     this.onChangeInputsearch = this.onChangeInputsearch.bind(this);
     this.pesquisar = this.pesquisar.bind(this);
-    this.state = { itenSearch: '', onSearch: true, loading: false };
+    this.state = { itenSearch: '', onSearch: true, loading: true };
   }
 
   onChangeInputsearch({ target: { value } }) {
@@ -32,7 +32,7 @@ export default class Search extends React.Component {
           data-testid="page-search"
           className="flex w-full justify-center items-center my-40"
         >
-          {loading ? <p>Carregando...</p>
+          {loading ? <p className="loading">Carregando...</p>
             : (
               <div
                 className="m-auto flex border-2 border-green-400
