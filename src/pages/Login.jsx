@@ -11,8 +11,9 @@ const imgFon = 'https://images.vexels.com/media/users/3/203199/isolated/preview/
 export default class Login extends React.Component {
   constructor() {
     super();
-    this.handleImputChange = this.handleImputChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.onClickLogin = this.onClickLogin.bind(this);
+    this.onEnterImput = this.onEnterImput.bind(this);
     this.state = {
       name: '',
       loading: false,
@@ -21,7 +22,7 @@ export default class Login extends React.Component {
     };
   }
 
-  handleImputChange({ target }) {
+  handleInputChange({ target }) {
     const { value } = target;
 
     if (value.length >= minNameImput) {
@@ -43,6 +44,10 @@ export default class Login extends React.Component {
     this.setState({
       redirect: true, loading: false,
     });
+  }
+
+  onEnterImput({ key }) {
+    if (key === 'Enter') return this.onClickLogin();
   }
 
   render() {
@@ -88,7 +93,8 @@ export default class Login extends React.Component {
                   focus:ring-green-500 focus:border-green-600 font-semibold"
                   placeholder="Informe seu nome..."
                   value={ name }
-                  onChange={ this.handleImputChange }
+                  onKeyUp={ this.onEnterImput }
+                  onChange={ this.handleInputChange }
                 />
 
                 <button
