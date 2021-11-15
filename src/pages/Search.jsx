@@ -32,7 +32,15 @@ export default class Search extends React.Component {
           data-testid="page-search"
           className="flex w-full justify-center items-center my-40"
         >
-          {loading ? <p className="loading">Carregando...</p>
+          {loading
+            ? (
+              <div className="flex p-4 space-x-2 pulse">
+                <div
+                  className="loading h-5 w-5 rounded-full border-l-2
+                border-green-800"
+                />
+                <p>Carregando...</p>
+              </div>)
             : (
               <div
                 className="m-auto flex border-2 border-green-400

@@ -58,6 +58,10 @@ export default class Login extends React.Component {
               className="m-auto h-full w-4/5 flex shadow-xl p-36 rounded-3xl
               transition-shadow duration-250 linear transform hover:scale-1-1 cards"
             >
+              <div
+                className="loading w-24 h-24 p-24 rounded-full border-l-4 border-r-4
+                border-green-800"
+              />
               <p className="m-auto text-green-800 text-6xl font-extrabold">
                 Carregando...
               </p>

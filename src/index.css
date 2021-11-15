@@ -17,11 +17,38 @@ body {
   align-content: center;
   align-self: center;
 } */
-/* .loading {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-} */
+
+.loading {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function:  linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to  {
+    transform: rotate(360deg);
+  }
+}
+
+.pulse {
+  animation-name: pulso;
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function:  ease-in-out;
+}
+
+@keyframes pulso {
+  from{
+    opacity: 30;
+  }
+    to{
+      opacity: 90;
+    }
+}
 
 .cards {
   background-color: #fff;
