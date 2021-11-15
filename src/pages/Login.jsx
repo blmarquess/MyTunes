@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import Header from '../components/Header';
 import { createUser } from '../services/userAPI';
 
 const minNameImput = 3;
@@ -22,18 +23,11 @@ export default class Login extends React.Component {
     };
   }
 
-  handleInputChange({ target }) {
-    const { value } = target;
-
+  handleInputChange({ target: { value, name } }) {
     if (value.length >= minNameImput) {
-      this.setState(() => ({
-        name: value,
-        btnEnterOn: false,
-      }));
+      this.setState(() => ({ [name]: value, btnEnterOn: false }));
     } else {
-      this.setState(() => ({
-        name: value,
-      }));
+      this.setState(() => ({ [name]: value }));
     }
   }
 
@@ -41,9 +35,7 @@ export default class Login extends React.Component {
     const { name } = this.state;
     this.setState(() => ({ loading: true }));
     await createUser({ name });
-    this.setState({
-      redirect: true, loading: false,
-    });
+    this.setState({ redirect: true, loading: false });
   }
 
   onEnterImput({ key }) {
@@ -56,7 +48,11 @@ export default class Login extends React.Component {
     if (redirect) return <Redirect to="/search" />;
 
     return (
-      <div className="m-auto py-40 flex h-full w-full items-center justify-center">
+      <div
+        className="flex h-full w-full justify-center content-center items-center
+        align-middle m-auto py-60"
+      >
+        <Header />
         {loading
           ? (
             <div
@@ -72,7 +68,8 @@ export default class Login extends React.Component {
             <div
               data-testid="page-login"
               className="m-auto h-full w-4/5 flex shadow-xl p-12 rounded-3xl
-              transition-shadow duration-250 linear transform hover:scale-1-1 cards"
+              transition-shadow duration-250 linear transform hover:scale-1-1 cards
+              items-center align-middle self-center"
             >
               <div className="grid grid-cols-1 text-center w-2/5 cards">
                 <h1 className="m-auto text-green-800 text-2xl font-semibold">
