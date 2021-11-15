@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router';
 import { createUser } from '../services/userAPI';
 
+const minNameImput = 3;
+
 const imgFon = 'https://images.vexels.com/media/users/3/203199/isolated/preview/93e9f7dbfc842de939011bc64aa482b6-fones-de-ouvido-totalmente-verdes.png';
 
 // imagem disponivel em https://br.vexels.com/png-svg/previsualizar/203199/fones-de-ouvido-totalmente-verdes
@@ -15,14 +17,23 @@ export default class Login extends React.Component {
       name: '',
       loading: false,
       redirect: false,
+      btnEnterOn: true,
     };
   }
 
   handleImputChange({ target }) {
     const { value } = target;
-    this.setState(() => ({
-      name: value,
-    }));
+
+    if (value.length >= minNameImput) {
+      this.setState(() => ({
+        name: value,
+        btnEnterOn: false,
+      }));
+    } else {
+      this.setState(() => ({
+        name: value,
+      }));
+    }
   }
 
   async onClickLogin() {
@@ -35,7 +46,7 @@ export default class Login extends React.Component {
   }
 
   render() {
-    const { loading, name, redirect } = this.state;
+    const { loading, name, redirect, btnEnterOn } = this.state;
 
     if (redirect) return <Redirect to="/search" />;
 
@@ -83,6 +94,7 @@ export default class Login extends React.Component {
                 <button
                   data-testid="login-submit-button"
                   type="button"
+                  disabled={ btnEnterOn }
                   className="bg-green-600 border-2 rounded-3xl px-8 p-2 text-white
                   font-bold"
                   onClick={ this.onClickLogin }
