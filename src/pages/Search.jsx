@@ -7,7 +7,7 @@ export default class Search extends React.Component {
     super();
     this.onChangeInputsearch = this.onChangeInputsearch.bind(this);
     this.pesquisar = this.pesquisar.bind(this);
-    this.state = { itenSearch: '', onSearch: true };
+    this.state = { itenSearch: '', onSearch: true, loading: false };
   }
 
   onChangeInputsearch({ target: { value } }) {
@@ -24,7 +24,7 @@ export default class Search extends React.Component {
   }
 
   render() {
-    const { onSearch, itenSearch } = this.state;
+    const { onSearch, itenSearch, loading } = this.state;
     return (
       <div>
         <Header />
@@ -32,33 +32,38 @@ export default class Search extends React.Component {
           data-testid="page-search"
           className="flex w-full justify-center items-center my-40"
         >
-          <div
-            className="m-auto flex border-2 border-green-400 rounded-full pr-4 pl-0
-          bg-green-500 text-white font-bold"
-          >
-            <input
-              type="text"
-              data-testid="search-artist-input"
-              className="py-2 pl-10 pr-20 border-0 rounded-l-3xl mr-0 text-green-900
-              outline-none focus:hover-green-700"
-              placeholder="Procure sua musica .."
-              value={ itenSearch }
-              onChange={ this.onChangeInputsearch }
-            />
-            <div className="flex items-center m-0">
-              <SearchIcon />
-              <button
-                className="ml-4"
-                type="button"
-                data-testid="search-artist-button"
-                disabled={ onSearch }
-                onClick={ this.pesquisar }
+          {loading ? <p>Carregando...</p>
+            : (
+              <div
+                className="m-auto flex border-2 border-green-400
+                  rounded-full pr-4 pl-0 bg-green-500 text-white font-bold"
               >
-                Pesquisar
-              </button>
-            </div>
-          </div>
+                <input
+                  type="text"
+                  data-testid="search-artist-input"
+                  className="py-4 pl-10 pr-20 border-0 rounded-l-full mr-0 my-0
+                  text-green-900 outline-none  shadow-inner"
+                  placeholder="Procure sua musica .."
+                  value={ itenSearch }
+                  onChange={ this.onChangeInputsearch }
+                />
+                <div className="flex items-center m-0">
+                  <SearchIcon />
+                  <button
+                    className="ml-8 mr-2"
+                    type="button"
+                    data-testid="search-artist-button"
+                    disabled={ onSearch }
+                    onClick={ this.pesquisar }
+                  >
+                    Pesquisar
+                  </button>
+                </div>
+              </div>)}
         </div>
+        <article>
+          <p>Por enquanto fica ai!</p>
+        </article>
       </div>
     );
   }

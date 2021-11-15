@@ -35,18 +35,20 @@ export default class Header extends React.Component {
           data-testid="header-component"
           className="flex justify-between h-24 bg-green-900 items-center"
         >
-          <div className="font-extrabold mx-8 text-2xl text-white">Home TrybTunes</div>
+          <div className="font-extrabold mx-10 text-3xl text-white">
+            Home TrybTunes
+          </div>
           <div
-            className="rounded-3xl bg-blue-50 h-10 flex mx-8 px-1 space-x-2 items-center
-          justify-between"
+            className="rounded-full bg-blue-50 h-10 flex mx-8 px-2 space-x-2 items-center
+          justify-between border-1 border-white"
           >
             <div
-              className="rounded-full bg-green-400 border-2 border-green-900
+              className="rounded-full bg-green-400 border-4 border-green-400 my-1 mx-0
               font-semibold"
             >
               <UserIcon />
             </div>
-            <span data-testid="header-user-name" className="mx-4 px-2">
+            <span data-testid="header-user-name" className="mx-6 px-2 py-4">
               { name === '' ? <p>Carregando...</p>
                 : name }
             </span>
