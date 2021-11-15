@@ -38,19 +38,21 @@ export default class Login extends React.Component {
           ? (
             <div
               data-testid="page-login"
-              className="m-auto h-full w-4/5 flex shadow-2xl p-36 rounded-3xl
-              transition-shadow duration-250 linear transform hover:scale-1-1"
+              className="m-auto h-full w-4/5 flex shadow-xl p-36 rounded-3xl
+              transition-shadow duration-250 linear transform hover:scale-1-1 cards"
             >
-              <p className="m-auto text-green-800 text-6xl">Carregando...</p>
+              <p className="m-auto text-green-800 text-6xl font-extrabold">
+                Carregando...
+              </p>
             </div>)
           : (
             <div
               data-testid="page-login"
-              className="m-auto h-full w-4/5 flex shadow-2xl p-12 rounded-3xl
-              transition-shadow duration-250 linear transform hover:scale-1-1"
+              className="m-auto h-full w-4/5 flex shadow-xl p-12 rounded-3xl
+              transition-shadow duration-250 linear transform hover:scale-1-1 cards"
             >
-              <div className="grid grid-cols-1 text-center w-2/5">
-                <h1 className="m-auto text-green-800 text-2xl">
+              <div className="grid grid-cols-1 text-center w-2/5 cards">
+                <h1 className="m-auto text-green-800 text-2xl font-semibold">
                   &#127926;ﾠﾠProject TribTunesﾠﾠ&#127911;
                 </h1>
                 <img src={ imgFon } alt="img_logo" className="m-auto w-3/6" />
