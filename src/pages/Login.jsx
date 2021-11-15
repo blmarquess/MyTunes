@@ -40,9 +40,9 @@ export default class Login extends React.Component {
     const { name } = this.state;
     this.setState(() => ({ loading: true }));
     await createUser({ name });
-    this.setState(() => ({
+    this.setState({
       redirect: true, loading: false,
-    }));
+    });
   }
 
   render() {
