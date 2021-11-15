@@ -26,7 +26,7 @@ export default class Login extends React.Component {
     if (value.length >= minNameImput) {
       this.setState(() => ({ [name]: value, btnEnterOn: false }));
     } else {
-      this.setState(() => ({ [name]: value }));
+      this.setState(() => ({ [name]: value, btnEnterOn: true }));
     }
   }
 

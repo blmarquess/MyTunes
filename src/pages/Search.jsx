@@ -6,15 +6,21 @@ export default class Search extends React.Component {
     super();
     this.onChangeInputsearch = this.onChangeInputsearch.bind(this);
     this.pesquisar = this.pesquisar.bind(this);
-    this.state = { itenSearch: '', onSearch: false };
+    this.state = { itenSearch: '', onSearch: true };
   }
 
   onChangeInputsearch({ target: { value } }) {
-    if (value.length >= 2) return;
-    this.setState(() => ({ itenSearch: value, onSearch: true }));
+    if (value.length >= 2) {
+      this.setState(() => ({ itenSearch: value, onSearch: false }));
+    } else {
+      this.setState(() => ({ itenSearch: value, onSearch: true }));
+    }
   }
 
-  pesquisar() { }
+  pesquisar() {
+    const { itenSearch } = this.state;
+    console.log(itenSearch);
+  }
 
   render() {
     const { onSearch, itenSearch } = this.state;
