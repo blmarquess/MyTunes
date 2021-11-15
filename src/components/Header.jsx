@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import UserIcon from './UserIcon';
 
+const menuStyle = `flex border-l-2 border-r-2 border-green-900 bg-green-600 px-8 py-2
+w-52 text-white justify-center  flex-grow shrink `;
+
 export default class Header extends React.Component {
   constructor() {
     super();
@@ -50,17 +53,17 @@ export default class Header extends React.Component {
           </div>
         </div>
         <nav className="flex items-center justify-around">
-          <div>
+          <div className={ menuStyle }>
             <Link to="/search" data-testid="link-to-search">
               Search
             </Link>
           </div>
-          <div>
+          <div className={ menuStyle }>
             <Link to="/favorites" data-testid="link-to-favorites">
               Favorites
             </Link>
           </div>
-          <div>
+          <div className={ menuStyle }>
             <Link to="/profile" data-testid="link-to-profile">
               Profile
             </Link>
