@@ -5,16 +5,19 @@ export default class Search extends React.Component {
   constructor() {
     super();
     this.onChangeInputsearch = this.onChangeInputsearch.bind(this);
-    this.onChangeInputsearch = this.onChangeInputsearch.bind(this);
+    this.pesquisar = this.pesquisar.bind(this);
     this.state = { itenSearch: '', onSearch: false };
   }
 
-  onChangeInputsearch() { }
+  onChangeInputsearch({ target: { value } }) {
+    if (value.length >= 2) return;
+    this.setState(() => ({ itenSearch: value, onSearch: true }));
+  }
 
-  onChangeInputsearch(){ return null; }
+  pesquisar() { }
 
   render() {
-    const { onSearch } = this.state;
+    const { onSearch, itenSearch } = this.state;
     return (
       <div>
         <Header />
@@ -23,6 +26,7 @@ export default class Search extends React.Component {
             <input
               type="text"
               data-testid="search-artist-input"
+              value={ itenSearch }
               onChange={ this.onChangeInputsearch }
             />
             <button
