@@ -5,7 +5,7 @@ export default () => (
   <div>
     <Header />
     <div data-testid="page-search">
-      To no search!
+      To no search! Whit Header.
     </div>
   </div>
 );

@@ -5,7 +5,7 @@ export default () => (
   <div>
     <Header />
     <div data-testid="page-profile-edit">
-      Estamos em profile edit;
+      Estamos em profile edit com o header incluso!
     </div>
   </div>
 );
