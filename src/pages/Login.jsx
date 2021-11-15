@@ -52,7 +52,6 @@ export default class Login extends React.Component {
         className="flex h-full w-full justify-center content-center items-center
         align-middle m-auto py-60"
       >
-        <Header />
         {loading
           ? (
             <div
