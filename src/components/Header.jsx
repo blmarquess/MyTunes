@@ -6,13 +6,12 @@ export default class Header extends React.Component {
     super();
     this.getUserSession = this.getUserSession.bind(this);
     this.state = {
-      name: 'User',
+      name: '',
     };
   }
 
   componentDidMount() {
     this.getUserSession();
-    console.log(this.state);
   }
 
   async getUserSession() {
@@ -28,8 +27,9 @@ export default class Header extends React.Component {
     return (
       <header data-testid="header-component">
         <div> Home</div>
-        <span testid="header-user-name">
-          { name === 'User' ? <p>Carregando...</p> : name }
+        <span>
+          {name === '' ? <p>Carregando...</p>
+            : <span data-testid="header-user-name">{ name }</span>}
         </span>
       </header>
     );
