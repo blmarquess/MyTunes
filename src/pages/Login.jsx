@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-import Header from '../components/Header';
 import { createUser } from '../services/userAPI';
 
 const minNameImput = 3;
