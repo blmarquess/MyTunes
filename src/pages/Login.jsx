@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import { createUser } from '../services/userAPI';
 
 const imgFon = 'https://images.vexels.com/media/users/3/203199/isolated/preview/93e9f7dbfc842de939011bc64aa482b6-fones-de-ouvido-totalmente-verdes.png';
@@ -13,6 +14,7 @@ export default class Login extends React.Component {
     this.state = {
       name: '',
       loading: false,
+      redirect: false,
     };
   }
 
@@ -27,11 +29,16 @@ export default class Login extends React.Component {
     const { name } = this.state;
     this.setState(() => ({ loading: true }));
     await createUser({ name });
-    this.setState(() => ({ loading: false }));
+    this.setState(() => ({
+      redirect: true, loading: false,
+    }));
   }
 
   render() {
-    const { loading, name } = this.state;
+    const { loading, name, redirect } = this.state;
+
+    if (redirect) return <Redirect to="/search" />;
+
     return (
       <div className="m-auto py-40 flex h-full w-full items-center justify-center">
         {loading
@@ -67,7 +74,7 @@ export default class Login extends React.Component {
                   data-testid="login-name-input"
                   className="p-2 px-4 w-full rounded-3xl bg-white border-2 mx-2
                   text-green-800 place-content-start shadow-inner focus:outline-none
-                  focus:ring-green-500 focus:border-green-600"
+                  focus:ring-green-500 focus:border-green-600 font-semibold"
                   placeholder="Informe seu nome..."
                   value={ name }
                   onChange={ this.handleImputChange }
@@ -76,7 +83,8 @@ export default class Login extends React.Component {
                 <button
                   data-testid="login-submit-button"
                   type="button"
-                  className="bg-green-600 border-2 rounded-3xl px-8 p-2 text-white"
+                  className="bg-green-600 border-2 rounded-3xl px-8 p-2 text-white
+                  font-bold"
                   onClick={ this.onClickLogin }
                 >
                   Entrar

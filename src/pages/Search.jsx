@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => (<div data-testid="page-search" />);
+export default () => (<div data-testid="page-search">To no search!</div>);
