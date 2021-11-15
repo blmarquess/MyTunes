@@ -86,7 +86,7 @@ export default class Login extends React.Component {
                 <input
                   type="text"
                   id="nameInput"
-                  name="userName"
+                  name="name"
                   data-testid="login-name-input"
                   className="p-2 px-4 w-full rounded-3xl bg-white border-2 mx-2
                   text-green-800 place-content-start shadow-inner focus:outline-none
