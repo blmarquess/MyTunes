@@ -12,6 +12,7 @@ export default class Search extends React.Component {
     super();
     this.onChangeInputsearch = this.onChangeInputsearch.bind(this);
     this.pesquisar = this.pesquisar.bind(this);
+    this.pressEnter = this.pressEnter.bind(this);
     this.state = {
       itenSearch: '',
       onSearch: true,
@@ -40,6 +41,10 @@ export default class Search extends React.Component {
     } else {
       this.setState(() => ({ itenSearch: '', onSearch: true, loading: false }));
     }
+  }
+
+  pressEnter({ key }) {
+    if (key === 'Enter') return this.pesquisar();
   }
 
   render() {
@@ -71,12 +76,12 @@ export default class Search extends React.Component {
                   className="py-4 pl-10 pr-20 border-0 rounded-full mr-0 my-0
                   text-green-900 outline-none  shadow-inner"
                   placeholder="Procure sua musica .."
+                  onKeyUp={ this.pressEnter }
                   value={ itenSearch }
                   onChange={ this.onChangeInputsearch }
                 />
                 <div className="flex items-center m-0">
                   <button
-                    // className="ml-8 mr-2 -rounded-l-full"
                     type="button"
                     data-testid="search-artist-button"
                     disabled={ onSearch }
