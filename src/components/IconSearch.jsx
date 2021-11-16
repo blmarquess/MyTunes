@@ -1,7 +1,6 @@
 import React from 'react';
 
-const searchCustom = `text-center text-green-900 border-t-1 border-b-1
-border-green-400 bg-white rounded-r-full -rounded-l-full p-4 -m-3`;
+const searchCustom = 'text-center text-white ml-8 mr-4';
 
 export default () => (
   <div className={ searchCustom }>

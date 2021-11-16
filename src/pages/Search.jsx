@@ -68,27 +68,29 @@ export default class Search extends React.Component {
                 <input
                   type="text"
                   data-testid="search-artist-input"
-                  className="py-4 pl-10 pr-20 border-0 rounded-l-full mr-0 my-0
+                  className="py-4 pl-10 pr-20 border-0 rounded-full mr-0 my-0
                   text-green-900 outline-none  shadow-inner"
                   placeholder="Procure sua musica .."
                   value={ itenSearch }
                   onChange={ this.onChangeInputsearch }
                 />
                 <div className="flex items-center m-0">
-                  <SearchIcon />
                   <button
-                    className="ml-8 mr-2"
+                    // className="ml-8 mr-2 -rounded-l-full"
                     type="button"
                     data-testid="search-artist-button"
                     disabled={ onSearch }
                     onClick={ this.pesquisar }
                   >
-                    Pesquisar
+                    <SearchIcon />
                   </button>
                 </div>
               </div>)}
         </div>
-        <section className="flex flex-wrap p-10 mx-auto my-1 justify-center items-center">
+        <section
+          className="flex flex-wrap p-10 mx-auto my-1
+        justify-center items-center text-center"
+        >
           {atuaQuery.length === 0
             ? (<p>Nenhum álbum foi encontrado</p>)
             : (
@@ -96,7 +98,7 @@ export default class Search extends React.Component {
                 lassName="flex flex-wrap p-10 mx-auto my-4 justify-center items-center"
               >
                 <span
-                  className="inline text-center text-3xl font-black"
+                  className="inline text-center text-xl font-black text-green-900"
                 >
                   {`Resultado de álbuns de: ${toQuery}`}
                 </span>
