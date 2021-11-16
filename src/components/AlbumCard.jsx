@@ -14,7 +14,8 @@ export default class AlbumCard extends React.Component {
     return (
       <section
         id={ artistId }
-        className="grid grid-cols-1 m-6 w-44 text-xs bg-white border-1 rounded-md"
+        className="grid grid-cols-1 m-6 w-44 h-64 text-xs bg-white border-1
+        rounded-md shadow-lg"
       >
         <div>
           <img
@@ -23,8 +24,13 @@ export default class AlbumCard extends React.Component {
             alt={ `Capa do album ${collectionName}` }
           />
         </div>
-        <div data-testid="artist-name" className="my-2 p-2">{ artistName }</div>
-        <div data-testid="album-name" className="p-2">{ collectionName }</div>
+        <div data-testid="artist-name" className="p-2">{ artistName }</div>
+        <div
+          data-testid="album-name"
+          className="p-2 overflow-auto text-xs font-extralight"
+        >
+          { collectionName }
+        </div>
       </section>
     );
   }
