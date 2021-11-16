@@ -49,7 +49,14 @@ export default class Header extends React.Component {
               <UserIcon />
             </div>
             <span data-testid="header-user-name" className="mx-6 px-2 py-4">
-              { name === '' ? <p>Carregando...</p>
+              { name === '' ? (
+                <div className="flex p-4 space-x-2 pulse">
+                  <div
+                    className="loading h-5 w-5 rounded-full border-l-2
+                border-green-800"
+                  />
+                  <p>Carregando...</p>
+                </div>)
                 : name }
             </span>
           </div>
