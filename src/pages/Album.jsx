@@ -1,16 +1,49 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
+import getMusics from '../services/musicsAPI';
 
 const previewUrl = 'https://media.gettyimages.com/photos/an-artwork-issued-from-the-album-cover-the-wall-released-in-1979-is-picture-id862122228?s=612x612';
 
 export default class Album extends React.Component {
-  // constructor(){
-  //   super();
-  // }
+  constructor() {
+    super();
+    this.getAlbumById = this.getAlbumById.bind(this);
+    this.state = {
+      songs: [],
+      artistName: '',
+      albumName: '',
+      // loading: false,
+      // favorites: ['favorite', 'songs'],
+    };
+  }
+
+  componentDidMount() {
+    const { match: { params: { id: albumId } } } = this.props;
+    console.log(albumId);
+    getMusics(albumId)
+      .then((songs) => {
+        const {
+          artistName,
+          collectionName: albumName,
+        } = songs[0];
+        this.setState({
+          songs,
+          artistName,
+          albumName,
+        });
+      });
+  }
+
+  getAlbumById(id) {
+    const album = getMusics(id);
+    console.log(album);
+  }
 
   render() {
-    const { album } = this.props.location;
+    const { songs, artistName, albumName, } = this.props.location;
+
     return (
       <div>
         <Header />
@@ -26,16 +59,12 @@ export default class Album extends React.Component {
                 alt=""
                 className="object-cover h-72 w-full shadow-lx"
               />
-              <span className="text-2xl font-semibold">{ album }</span>
-              <p className="text-sm">Description</p>
+              <span className="text-2xl font-semibold">{ albumName }</span>
+              <p className="text-sm">{ artistName }</p>
             </div>
           </section>
           <section className="mx-auto">
             <div className="w-full">
-              <MusicCard />
-              <MusicCard />
-              <MusicCard />
-              <MusicCard />
               <MusicCard />
               <MusicCard />
               <MusicCard />
@@ -49,3 +78,8 @@ export default class Album extends React.Component {
     );
   }
 }
+
+MusicCard.propTypes = {
+  state: PropTypes.string.isRequired,
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};

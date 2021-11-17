@@ -112,7 +112,7 @@ export default class Search extends React.Component {
                     <Link
                       to={ {
                         pathname: `/album/${album.collectionId}`,
-                        album: `${album.collectionId}`,
+                        state: `${album.collectionId}`,
                       } }
                       data-testid={ `link-to-album-${album.collectionId}` }
                       key={ album.collectionId }
