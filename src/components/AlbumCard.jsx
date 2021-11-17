@@ -8,7 +8,6 @@ export default class AlbumCard extends React.Component {
       artistName,
       collectionName,
       artworkUrl100,
-      // collectionId,
     } = this.props;
 
     return (
@@ -39,7 +38,6 @@ export default class AlbumCard extends React.Component {
 AlbumCard.propTypes = {
   artistId: PropTypes.number.isRequired,
   artistName: PropTypes.string.isRequired,
-  // collectionId: PropTypes.number.isRequired,
   collectionName: PropTypes.string.isRequired,
   artworkUrl100: PropTypes.string.isRequired,
 };

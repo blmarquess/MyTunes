@@ -7,7 +7,6 @@ import getMusics from '../services/musicsAPI';
 export default class Album extends React.Component {
   constructor() {
     super();
-    this.getAlbumById = this.getAlbumById.bind(this);
     this.state = {
       albumData: [],
       artistName: '',
@@ -21,7 +20,8 @@ export default class Album extends React.Component {
   componentDidMount() {
     const { match: { params: { id: albumId } } } = this.props;
 
-    // treixo de 26 a 39 do copiado da branch #8 -> Israel Santana
+    // treixo do getMusics copiado da branch #8 -> Israel Santana
+    // the my mind went blank fil a moment
     getMusics(albumId)
       .then((data) => {
         const {
@@ -36,11 +36,6 @@ export default class Album extends React.Component {
           artworkUrl100,
         }));
       });
-  }
-
-  getAlbumById(id) {
-    const album = getMusics(id);
-    console.log(album);
   }
 
   render() {
