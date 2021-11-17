@@ -50,7 +50,7 @@ export default class Album extends React.Component {
           md:justify-center items-start mt-16"
         >
           <section className="mx-auto container">
-            <div className="w-72 h-96 grid grid-cols-1">
+            <div className="w-72 h-96 grid grid-cols-1 mb-8">
               <img
                 src={ artworkUrl100 }
                 alt="Capa do Album"
@@ -68,8 +68,9 @@ export default class Album extends React.Component {
           <section className="mx-auto">
             <div className="w-full">
               { albumData.filter(({ kind }) => kind).map((song) => (
-                <div key={ song.trackCount }>
+                <div key={ song.trackId }>
                   <MusicCard
+                    trackId={ song.trackId }
                     trackName={ song.trackName }
                     previewUrl={ song.previewUrl }
                   />
