@@ -110,7 +110,10 @@ export default class Search extends React.Component {
                 <div className={ gridResultados }>
                   {atuaQuery.map((album) => (
                     <Link
-                      to={ `/album/${album.collectionId}` }
+                      to={ {
+                        pathname: `/album/${album.collectionId}`,
+                        album: `${album.collectionId}`,
+                      } }
                       data-testid={ `link-to-album-${album.collectionId}` }
                       key={ album.collectionId }
                       name={ album.collectionName }
