@@ -11,9 +11,10 @@ export default class Album extends React.Component {
     super();
     this.getAlbumById = this.getAlbumById.bind(this);
     this.state = {
-      songs: [],
+      albumData: [],
       artistName: '',
       albumName: '',
+      artworkUrl100: '',
       // loading: false,
       // favorites: ['favorite', 'songs'],
     };
@@ -21,15 +22,17 @@ export default class Album extends React.Component {
 
   componentDidMount() {
     const { match: { params: { id: albumId } } } = this.props;
-    console.log(albumId);
+
+    // treixo de 26 a 39 do copiado da branch #8 -> Israel Santana
     getMusics(albumId)
-      .then((songs) => {
+      .then((data) => {
         const {
           artistName,
           collectionName: albumName,
-        } = songs[0];
+          artworkUrl100,
+        } = data[0];
         this.setState({
-          songs,
+          albumData: data,
           artistName,
           albumName,
         });
@@ -42,7 +45,7 @@ export default class Album extends React.Component {
   }
 
   render() {
-    const { songs, artistName, albumName, } = this.props.location;
+    const { albumData, artistName, albumName, artworkUrl100 } = this.state;
 
     return (
       <div>
@@ -55,8 +58,8 @@ export default class Album extends React.Component {
           <section className="mx-auto container">
             <div className="w-72 h-96">
               <img
-                src={ previewUrl }
-                alt=""
+                src={ artworkUrl100 }
+                alt="Capa do Album"
                 className="object-cover h-72 w-full shadow-lx"
               />
               <span className="text-2xl font-semibold">{ albumName }</span>
@@ -65,6 +68,8 @@ export default class Album extends React.Component {
           </section>
           <section className="mx-auto">
             <div className="w-full">
+              {/* {albumData.map(album)=>() } */}
+
               <MusicCard />
               <MusicCard />
               <MusicCard />
@@ -80,6 +85,5 @@ export default class Album extends React.Component {
 }
 
 MusicCard.propTypes = {
-  state: PropTypes.string.isRequired,
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
+  match: PropTypes.string.isRequired,
 };
