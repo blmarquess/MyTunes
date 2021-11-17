@@ -72,7 +72,7 @@ export default class Album extends React.Component {
           </section>
           <section className="mx-auto">
             <div className="w-full">
-              { albumData.map((song) => (
+              { albumData.filter(({ kind }) => kind).map((song) => (
                 <div key={ song.trackCount }>
                   <MusicCard
                     trackName={ song.trackName }
