@@ -52,16 +52,18 @@ export default class Album extends React.Component {
     this.setState(() => ({ favorites: sounds }));
   }
 
-  async OnOffStared(sond, event) {
-    console.log(event);
+  async OnOffStared(sond) {
+    const { favorites } = this.state;
+    const isStared = favorites.some(({ trackId }) => trackId === sond.trackId);
     this.setState(() => ({ loading: true }));
-    // if (isFavorite(sond)) {
-    await addSong(sond);
-    this.setState({ loading: false });
-    // } else {
-    // await removeSong(sond);
-    this.setState({ loading: false });
-    // }
+    if (!isStared) {
+      await addSong(sond);
+      this.setState({ loading: false });
+    } else {
+      await removeSong(sond);
+      console.log('to aqui');
+      this.setState({ loading: false });
+    }
   }
 
   render() {
