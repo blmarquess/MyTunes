@@ -53,3 +53,11 @@ body {
 .cards {
   background-color: #fff;
 }
+
+.check {
+  color: rgba(182, 181, 181, 0.678);
+}
+
+.check::before{
+  color: rgba(231, 178, 4, 0.918);
+}
