@@ -13,7 +13,7 @@ export default class MusicCard extends React.Component {
       rounded-full px-10 bg-white"
       >
         <span
-          className="mr-4 lg:w-40 sm:w-auto xs:w-auto text-xs font-medium"
+          className="mr-4 w-40 text-xs font-medium overflow-x-hidden"
         >
           { trackName }
         </span>
@@ -23,7 +23,7 @@ export default class MusicCard extends React.Component {
           src={ previewUrl }
           controls
           controlsList="nodownload"
-          className="p-0 w-max-28"
+          className="w-max-24 -border-2 -rounded-t-sm py-2 mx-2"
         >
           <track kind="captions" />
           O seu navegador não suporta o elemento
@@ -33,7 +33,7 @@ export default class MusicCard extends React.Component {
           htmlFor={ trackId }
           className="favorite checked:bg-yellow-500 flex m-0 items-center cursor-pointer"
         >
-          <p>Favorita</p>
+          Favorita
           <input
             id={ trackId }
             onChange={ OnOffStared }
@@ -43,7 +43,6 @@ export default class MusicCard extends React.Component {
             className="m-0 aparence-none h-4 w-4 border-2 ml-2"
             data-testid={ `checkbox-music-${trackId}` }
           />
-          <span className="text-gray-200 mx-2 check">&#9733;</span>
         </label>
       </dvi>
     );

@@ -44,7 +44,6 @@ export default class Album extends React.Component {
 
   componentDidUpdate() {
     this.getMyStareds();
-    // const stared = favorites.this.state;
   }
 
   async getMyStareds() {
@@ -61,7 +60,6 @@ export default class Album extends React.Component {
       this.setState({ loading: false });
     } else {
       await removeSong(sond);
-      console.log('to aqui');
       this.setState({ loading: false });
     }
   }
@@ -111,8 +109,8 @@ export default class Album extends React.Component {
                 </div>)
                 : (
                   albumData.filter(({ kind }) => kind)
-                    .map((song) => (
-                      <div key={ song.trackId }>
+                    .map((song, i) => (
+                      <div key={ i * song.trackId + i }>
                         <MusicCard
                           favorited={ favorites
                             .some(({ trackId }) => trackId === song.trackId) }
