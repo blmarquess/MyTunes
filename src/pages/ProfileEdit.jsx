@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import Header from '../components/Header';
 import { getUser, updateUser } from '../services/userAPI';
 
@@ -9,7 +10,7 @@ const styledInput = `-shadow-lg border-b-2 border-gray-300 rounded-sm
 export default class ProfileEdit extends React.Component {
   constructor() {
     super();
-    this.state = { loading: true };
+    this.state = { loading: true, redirect: false };
   }
 
   componentDidMount() { this.getUserInfos(); }
@@ -23,22 +24,23 @@ export default class ProfileEdit extends React.Component {
   // Bem estruturado mais não passo na estetica do lint
   // const w3cVmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
   // [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-  isValidEmail = (email) => {
-    const dotCom = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\?$/i;
-    const dotComBr = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
-    return dotCom.test(email) || dotComBr.test(email);
+  isValidEmail = () => {
+    const { email } = this.state;
+    const dotCom = /^[a-z0-9.]+@[a-z]+\.([a-z]+)?$/;
+    const dotComBr = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/;
+    return dotComBr.test(email) || dotCom.test(email);
   }
 
-  isValidForm = () => {
-    const { name, email, description, image, loading } = this.state;
-    const filledForm = [name, email, description, image, loading].every((e) => e !== '');
-    return filledForm;
-  }
+  isValidForm = () => Object.values(this.state).every((input) => input !== '');
+
+  isEnableBtnSave = () => this.isValidForm() && this.isValidEmail();
 
   toSalveData = () => {
-    const formOk = this.isValidForm();
-    console.log('clicou');
-    console.log(formOk);
+    const { name, email, description, image } = this.state;
+    const editedUser = { name, email, description, image };
+    this.setState(() => ({ loading: true }));
+    updateUser(editedUser);
+    this.setState(() => ({ redirect: true }));
   }
 
   handleChange = ({ target }) => {
@@ -47,7 +49,9 @@ export default class ProfileEdit extends React.Component {
   }
 
   render() {
-    const { name, email, description, image, loading } = this.state;
+    const { name, email, description, image, loading, redirect } = this.state;
+    const btnOn = this.isEnableBtnSave();
+    if (redirect) return <Redirect to="/profile" />;
     return (
       <div>
         <Header />
@@ -121,6 +125,7 @@ export default class ProfileEdit extends React.Component {
 
                   <button
                     type="button"
+                    disabled={ !btnOn }
                     data-testid="edit-button-save"
                     onClick={ this.toSalveData }
                     className="py-2 px-8 rounded-md bg-green-600 text-white font-bold
