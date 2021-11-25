@@ -6,28 +6,18 @@ import { getUser } from '../services/userAPI';
 export default class Profile extends React.Component {
   constructor() {
     super();
-    this.state = {
-      user: {},
-      loading: false,
-    };
+    this.state = { loading: false };
   }
 
-  componentDidMount() {
-    this.getProfileInfos();
-  }
+  componentDidMount() { this.getProfileInfos(); }
 
   getProfileInfos = async () => {
     const user = await getUser();
-    this.setState(() => ({ user, loading: false }));
+    this.setState(() => ({ ...user, loading: false }));
   }
 
   render() {
-    const { user: {
-      name,
-      email,
-      description,
-      image,
-    }, loading } = this.state;
+    const { name, email, description, image, loading } = this.state;
     return (
       <div data-testid="page-profile">
         <Header />
@@ -56,20 +46,24 @@ export default class Profile extends React.Component {
                     src={ image }
                     alt="PhotoUser"
                   />
-                  <EditBtn />
                 </div>
+
                 <section className="flex justify-start space-x-2 my-4">
                   <span>Usuario:</span>
                   <span>{ name }</span>
                 </section>
+
                 <section className="flex justify-start space-x-2 my-4">
                   <span>E-Mail:</span>
                   <span>{ email }</span>
                 </section>
+
                 <section className="flex flex-wrap justify-start space-x-2 my-4">
                   <span>Descrição:</span>
                   <span>{ description }</span>
                 </section>
+
+                <EditBtn />
               </section>
             </section>
           )}
