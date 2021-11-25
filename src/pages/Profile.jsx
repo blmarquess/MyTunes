@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import EditBtn from '../components/EditBtn';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
 
@@ -8,7 +8,7 @@ export default class Profile extends React.Component {
     super();
     this.state = {
       user: {},
-      loading: true,
+      loading: false,
     };
   }
 
@@ -32,7 +32,10 @@ export default class Profile extends React.Component {
       <div data-testid="page-profile">
         <Header />
         {loading ? (
-          <div className="flex p-4 space-x-2 pulse text-xl items-center">
+          <div
+            className="flex justify-center p-4 space-x-2 pulse text-xl
+            items-center"
+          >
             <div
               className="loading h-8 w-8 rounded-full border-l-2
                   border-green-800"
@@ -41,27 +44,33 @@ export default class Profile extends React.Component {
           </div>)
 
           : (
-            <section>
-              <div>
-                <section
-                  className="container flex
-                justify-center items-center bg-gray-200"
-                >
-                  <div>
-                    <img
-                      data-testid="profile-image"
-                      src={ image }
-                      alt={ `Imagem do usuario ${name}` }
-                    />
-                  </div>
+            <section className="flex justify-center items-center mt-16 p-8">
+              <section
+                className="grid grid-cols-1 p-8 rounded-lg w-96 space-x-2
+                justify-center items-center bg-white shadow-md"
+              >
+                <div className="flex justify-around items-center">
+                  <img
+                    data-testid="profile-image"
+                    className="h-24 w-24 rounded-full border-2 border-white"
+                    src={ image }
+                    alt="PhotoUser"
+                  />
+                  <EditBtn />
+                </div>
+                <section className="flex justify-start space-x-2 my-4">
+                  <span>Usuario:</span>
                   <span>{ name }</span>
-                  <span>{ email }</span>
-                  <span>{ description }</span>
-                  <Link to="/profile/edit">
-                    <div>Editar perfil</div>
-                  </Link>
                 </section>
-              </div>
+                <section className="flex justify-start space-x-2 my-4">
+                  <span>E-Mail:</span>
+                  <span>{ email }</span>
+                </section>
+                <section className="flex flex-wrap justify-start space-x-2 my-4">
+                  <span>Descrição:</span>
+                  <span>{ description }</span>
+                </section>
+              </section>
             </section>
           )}
       </div>
