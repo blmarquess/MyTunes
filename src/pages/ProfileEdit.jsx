@@ -29,9 +29,20 @@ export default class ProfileEdit extends React.Component {
     return dotCom.test(email) || dotComBr.test(email);
   }
 
+  isValidForm = () => {
+    const { name, email, description, image, loading } = this.state;
+    const filledForm = [name, email, description, image, loading].every((e) => e !== '');
+    return filledForm;
+  }
+
+  toSalveData = () => {
+    const formOk = this.isValidForm();
+    console.log('clicou');
+    console.log(formOk);
+  }
+
   handleChange = ({ target }) => {
     const { name, value } = target;
-    console.log(dotComBr.test(value));
     this.setState(() => ({ [name]: value }));
   }
 
@@ -55,9 +66,10 @@ export default class ProfileEdit extends React.Component {
 
             : (
               <section className="flex justify-center items-center mt-16 p-8">
-                <section
+                <form
+                  id="user-edit"
                   className="grid grid-cols-1 p-8 rounded-lg w-wull gap-2
-                justify-between items-center bg-white shadow-md"
+                  justify-between items-center bg-white shadow-md"
                 >
                   <section className={ styledLabel }>
                     <span>Usuario:</span>
@@ -107,14 +119,16 @@ export default class ProfileEdit extends React.Component {
                     />
                   </section>
 
-                  <div
+                  <button
+                    type="button"
                     data-testid="edit-button-save"
+                    onClick={ this.toSalveData }
                     className="py-2 px-8 rounded-md bg-green-600 text-white font-bold
-                ml-2 mr-0 text-center"
+                    ml-2 mr-0 text-center"
                   >
                     Salvar
-                  </div>
-                </section>
+                  </button>
+                </form>
               </section>
             )}
         </div>
