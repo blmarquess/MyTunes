@@ -9,7 +9,7 @@ const styledInput = `-shadow-lg border-b-2 border-gray-300 rounded-sm
 export default class ProfileEdit extends React.Component {
   constructor() {
     super();
-    this.state = { loading: true, user: '' };
+    this.state = { loading: true };
   }
 
   componentDidMount() { this.getUserInfos(); }
@@ -19,10 +19,24 @@ export default class ProfileEdit extends React.Component {
     this.setState(() => ({ ...atualInfo, loading: false }));
   }
 
-  // updateUser()
+  // regex obitido em https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+  // Bem estruturado mais não passo na estetica do lint
+  // const w3cVmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+  // [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  isValidEmail = (email) => {
+    const dotCom = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\?$/i;
+    const dotComBr = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+    return dotCom.test(email) || dotComBr.test(email);
+  }
+
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    console.log(dotComBr.test(value));
+    this.setState(() => ({ [name]: value }));
+  }
 
   render() {
-    const { loading, user } = this.state;
+    const { name, email, description, image, loading } = this.state;
     return (
       <div>
         <Header />
@@ -50,7 +64,9 @@ export default class ProfileEdit extends React.Component {
                     <input
                       type="text"
                       data-testid="edit-input-name"
-                      value={ user.name }
+                      name="name"
+                      onChange={ this.handleChange }
+                      value={ name }
                       className={ styledInput }
                     />
                   </section>
@@ -60,7 +76,9 @@ export default class ProfileEdit extends React.Component {
                     <input
                       type="text"
                       data-testid="edit-input-email"
-                      value={ user.email }
+                      name="email"
+                      onChange={ this.handleChange }
+                      value={ email }
                       className={ styledInput }
                     />
                   </section>
@@ -70,7 +88,9 @@ export default class ProfileEdit extends React.Component {
                     <input
                       type="text"
                       data-testid="edit-input-image"
-                      value={ user.image }
+                      name="image"
+                      onChange={ this.handleChange }
+                      value={ image }
                       className={ styledInput }
                     />
                   </section>
@@ -80,7 +100,9 @@ export default class ProfileEdit extends React.Component {
                     <input
                       type="text"
                       data-testid="edit-input-description"
-                      value={ user.description }
+                      name="description"
+                      onChange={ this.handleChange }
+                      value={ description }
                       className={ styledInput }
                     />
                   </section>
