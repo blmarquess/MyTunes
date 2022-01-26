@@ -1,6 +1,0 @@
-ignore_files:
-  - src/tests/
-  - .eslintrc.json
-  - .eslintignore
-  - .stylelintrc.json
-  - .stylelintignore
