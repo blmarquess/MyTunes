@@ -36,8 +36,8 @@
 - Design responsivo
 - Logica da edição do cadastro do usuario salvando seus dados no localstorage
 
-[print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png)
-[print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png)
-[print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png)
-[print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png)
-[print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png)
+![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png)
+![print da tela de Favoritos](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png)
+![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png)
+![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png)
+![print da tela de profile](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png)
