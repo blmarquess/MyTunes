@@ -36,7 +36,7 @@ export default class Header extends React.Component {
           className="flex justify-between h-24 bg-green-900 items-center"
         >
           <div className="font-extrabold mx-10 text-3xl text-white">
-            Home TrybTunes
+            Home MyTunes
           </div>
           <div
             className="rounded-full bg-blue-50 h-10 flex mx-8 px-2 space-x-2 items-center

@@ -75,7 +75,7 @@ export default class Login extends React.Component {
             >
               <div className="grid grid-cols-1 text-center w-2/5 cards">
                 <h1 className="m-auto text-green-800 text-2xl font-semibold">
-                  &#127926;ﾠﾠProject TribTunesﾠﾠ&#127911;
+                  &#127926;ﾠﾠMyTunesﾠﾠ&#127911;
                 </h1>
                 <img src={ imgFon } alt="img_logo" className="m-auto w-3/6" />
               </div>

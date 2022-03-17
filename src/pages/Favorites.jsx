@@ -50,30 +50,37 @@ export default class Favorites extends React.Component {
               />
             </div>
           </section>
-          <section className="mx-auto">
-            <div className="w-full">
-              {loading ? (
-                <div className="flex p-4 space-x-2 pulse text-xl items-center">
-                  <div
-                    className="loading h-8 w-8 rounded-full border-l-2
+          {staredSongs.length < 1
+            ? (
+              <p className="text-2xl text-green-700 p-10 mr-6">
+                Sua lista de favoritos esta vazia.!
+              </p>)
+            : (
+              <section className="mx-auto">
+                <div className="w-full">
+                  {loading ? (
+                    <div className="flex p-4 space-x-2 pulse text-xl items-center">
+                      <div
+                        className="loading h-8 w-8 rounded-full border-l-2
                   border-green-800"
-                  />
-                  <p>Carregando...</p>
-                </div>)
-                : (
-                  staredSongs
-                    .map((song, i) => (
-                      <div key={ song.trackId + i }>
-                        <MusicCard
-                          favorited={ staredSongs
-                            .some(({ trackId }) => trackId === song.trackId) }
-                          OnOffStared={ () => this.toRemoveStared(song) }
-                          { ...song }
-                        />
-                      </div>))
-                )}
-            </div>
-          </section>
+                      />
+                      <p>Carregando...</p>
+                    </div>)
+                    : (
+                      staredSongs
+                        .map((song, i) => (
+                          <div key={ song.trackId + i }>
+                            <MusicCard
+                              favorited={ staredSongs
+                                .some(({ trackId }) => trackId === song.trackId) }
+                              OnOffStared={ () => this.toRemoveStared(song) }
+                              { ...song }
+                            />
+                          </div>))
+                    )}
+                </div>
+              </section>
+            )}
         </section>
       </div>
     );
