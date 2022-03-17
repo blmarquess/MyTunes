@@ -1,6 +1,11 @@
-# :rocket:  :apple:  MyTunes  :construction
+# :rocket:  :apple:  MyTunes
 
 | BrunoMarques #89
+
+## Desafio
+
+Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do Itunes da Apple e listart albuns e favoritar musicas
+
 
 ## Requisitos do projeto
 
@@ -32,12 +37,19 @@
 
 ## Alem das entregas solicitadas
 
-- Estilização do projeto otilizando da biblioteca Tailwind-CSS
+- Estilização do projeto otilizando da biblioteca [Tailwind-CSS](https://tailwindcss.com/)
 - Design responsivo
 - Logica da edição do cadastro do usuario salvando seus dados no localstorage
 
 ![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png)
-![print da tela de Favoritos](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png)
 ![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png)
 ![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png)
+![print da tela de Favoritos](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png)
 ![print da tela de profile](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png)
+
+### Tecnologias utilizadas:
+- [ReactJS](https://reactjs.org/)
+- [React Router V5](https://reactrouter.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [JavaScript](https://www.javascript.com/)
+- [NodeJS](https://nodejs.org/)
