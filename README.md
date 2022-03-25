@@ -33,7 +33,7 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
 > - Sintax JSX
 > - React-Router-Dom V5
 > - Estado de componente de Class
-> - Utilização do siclo de vida do componente DidMount, WillUnmount, DidUpdate
+> - Utilização do ciclo de vida do componente DidMount, WillUnmount, DidUpdate
 
 ## Alem das entregas solicitadas
 
