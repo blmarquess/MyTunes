@@ -41,11 +41,11 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
 - Design responsivo
 - Logica da edição do cadastro do usuario salvando seus dados no localstorage
 
-![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png)
-![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png)
-![print da tela de login](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png)
-![print da tela de Favoritos](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png)
-![print da tela de profile](https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png)
+<img alt="Imagem da tela de Login" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png" />    <img alt="Imagem da tela de pesquisa de Albuns" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png" />
+
+<img alt="Imagem da tela de pesquisa mostrando resultados da pesquisa" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png" />    <img alt="Imagem da tela de albuns marcados como favoritos" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png" />
+                                                                             
+<img alt="Imagem da tela de usuario" width="500" aling="center" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png" />
 
 ### Tecnologias utilizadas:
 - [ReactJS](https://reactjs.org/)
