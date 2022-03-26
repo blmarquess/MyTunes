@@ -4,7 +4,7 @@
 
 ## Desafio
 
-Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do Itunes da Apple e listart albuns e favoritar musicas
+Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do Itunes da Apple e listar álbuns e favoritar músicas
 
 
 ## Requisitos do projeto
@@ -27,19 +27,20 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
 - [x]  13 - Crie a exibição de perfil
 - [x]  14 - Crie o formulário de edição de perfil
 
-## Quais os conteudos tinham sidos abordados até este momento do curso
+## Quais os conteúdos tinham sidos abordados até este momento do curso
 
-> - Componentes de class
-> - Sintax JSX
+> - Componentes de classe
+> - Sintaxe JSX
 > - React-Router-Dom V5
-> - Estado de componente de Class
-> - Utilização do ciclo de vida do componente DidMount, WillUnmount, DidUpdate
+> - Estado de componente de Classe
+> - Utilização do ciclo de vida do componente Did Mount, Will Unmount, Did Update
 
-## Alem das entregas solicitadas
+## Além das entregas solicitadas
 
 - Estilização do projeto otilizando da biblioteca [Tailwind-CSS](https://tailwindcss.com/)
 - Design responsivo
-- Logica da edição do cadastro do usuario salvando seus dados no localstorage
+- Lógica da edição do cadastro do usuário salvando seus dados no localstorage
+
 
 <img alt="Imagem da tela de Login" width="400" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png" />    <img alt="Imagem da tela de pesquisa de Albuns" width="400" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png" />
 
