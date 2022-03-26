@@ -41,11 +41,11 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
 - Design responsivo
 - Logica da edição do cadastro do usuario salvando seus dados no localstorage
 
-<img alt="Imagem da tela de Login" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png" />    <img alt="Imagem da tela de pesquisa de Albuns" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png" />
+<img alt="Imagem da tela de Login" width="400" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/login.png" />    <img alt="Imagem da tela de pesquisa de Albuns" width="400" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search.png" />
 
-<img alt="Imagem da tela de pesquisa mostrando resultados da pesquisa" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png" />    <img alt="Imagem da tela de albuns marcados como favoritos" width="500" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png" />
+<img alt="Imagem da tela de pesquisa mostrando resultados da pesquisa" width="400" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/search_resultes.png" />    <img alt="Imagem da tela de albuns marcados como favoritos" width="400" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/favorites.png" />
                                                                              
-<img alt="Imagem da tela de usuario" width="500" aling="center" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png" />
+<img alt="Imagem da tela de usuario" width="400" aling="center" src="https://raw.githubusercontent.com/blmarquess/MyTunes/bruno-marques-project-trybetunes/images/user_profile.png" />
 
 ### Tecnologias utilizadas:
 - [ReactJS](https://reactjs.org/)
@@ -53,3 +53,19 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [JavaScript](https://www.javascript.com/)
 - [NodeJS](https://nodejs.org/)
+
+
+
+<div  align="center">
+<p align="center">Contatos: <br></p>
+
+<p align="center" style="max-width: 50%;">
+ <h3>Bruno Marques</h3>
+  <a href="https://www.linkedin.com/in/00brunomarques/" alt="link para o Linkedin de Bruno Marques" rel="nofollow">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" style="max-width: 100%;">
+  </a>
+  <a href="mailto:blmarques.dev@gmail.com" alt="link para o enviar e-mail para Bruno Marques" target="_blank">
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" style="max-width: 100%;">
+  </a>
+</p>
+<div>
