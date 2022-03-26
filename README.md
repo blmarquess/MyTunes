@@ -1,10 +1,8 @@
 # :rocket:  :apple:  MyTunes
 
-| BrunoMarques #89
-
 ## Desafio
 
-Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do Itunes da Apple e listar álbuns e favoritar músicas
+Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do iTunes da Apple e listar álbuns e favoritar músicas
 
 
 ## Requisitos do projeto
