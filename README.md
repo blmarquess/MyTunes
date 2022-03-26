@@ -35,7 +35,7 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
 
 ## Além das entregas solicitadas
 
-- Estilização do projeto otilizando da biblioteca [Tailwind-CSS](https://tailwindcss.com/)
+- Estilização do projeto utilizando da biblioteca [Tailwind-CSS](https://tailwindcss.com/)
 - Design responsivo
 - Lógica da edição do cadastro do usuário salvando seus dados no localstorage
 
