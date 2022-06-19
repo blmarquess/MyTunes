@@ -68,3 +68,10 @@ Criar uma aplicação em [ReactJS](https://reactjs.org/) para consumir a API do 
   </a>
 </p>
 <div>
+
+  
+ <div align='center'>
+		
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N2DC6XA)
+		
+</div>
